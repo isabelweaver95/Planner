@@ -1,16 +1,17 @@
 class Task {
-    var Task: string
-    var Completed: Boolean
+    var Task: String = " "
+    var Completed: Boolean = false
 
     fun set_task(){
         println("Please enter the task you would like to add:")
         var input = readLine()
 
-        Task = input
+        // Assuming Task and Completed are global variables
+        Task = input ?: ""
         Completed = false
     }
 
-    fun isCompleted : Boolean(){
+    fun isCompleted(): Boolean{
         return Completed
     }
 
@@ -19,7 +20,7 @@ class Task {
         var input = readLine()
 
         if(input == "y" || input == "Y"){
-            Completed = True
+            Completed = true
         }
         else if(input == "n" || input == "N"){
             println("You got this!")
@@ -27,6 +28,5 @@ class Task {
             println("Invalid input. Please try again.")
         }
     }
-
 
 }
